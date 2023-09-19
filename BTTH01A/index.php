@@ -16,6 +16,8 @@
     </style>
 <body>
     <!-- Bài 1 -->
+    <span style="color: red;">Bài 1</span>
+    <br>
 <?php
 function tinhMang($arrs) {
     // Tính tổng
@@ -57,6 +59,8 @@ tinhMang($arrs);
 <br>
 <br>
 <!-- Bài 2 -->
+<span style="color: red;">Bài 2</span>
+    <br>
 <?php
 $arrs = ['đỏ', 'xanh', 'cam', 'trắng'];
 $names = ['Anh', 'Sơn', 'Thắng', 'tôi'];
@@ -83,6 +87,8 @@ echo $finalString;
 <br>
 <br>
 <!-- Bài  3 -->
+<span style="color: red;">Bài 3</span>
+    <br>
 <table>
     <?php
     $arrs = ['PHP', 'HTML', 'CSS', 'JS'];
@@ -97,6 +103,8 @@ echo $finalString;
 <br>
 <br>
 <!-- Bài 4 -->
+<span style="color: red;">Bài 4</span>
+    <br>
 <?php
 $arrs = array(
     "Italy" => "Rome", 
@@ -134,8 +142,8 @@ foreach ($arrs as $country => $capital) {
 <br>
 <br>
 <!-- Bài 5 -->
-<br>
-<br>
+<span style="color: red;">Bài 5</span>
+    <br>
 <?php
 $a = [
     'a' => [
@@ -169,6 +177,8 @@ print_r($elementA);
 <br>
 <br>
 <!-- Bài 6 -->
+<span style="color: red;">Bài 6</span>
+    <br>
 <?php
 $keys = array(
     "field1" => "first",
@@ -191,6 +201,53 @@ foreach ($keys as $key => $value) {
 }
 
 print_r($keysAndValues);
+?>
+
+
+<br>
+<br>
+<!-- Bài 7 -->
+<span style="color: red;">Bài 7</span>
+    <br>
+<?php
+$array = [12, 5, 200, 10, 125, 60, 90, 345, -123, 100, -125, 0];
+
+echo "Các số từ 100 đến 200 và chia hết cho 5 trong mảng:<br>";
+
+foreach ($array as $value) {
+    if ($value >= 100 && $value <= 200 && $value % 5 == 0) {
+        echo $value . "<br>";
+    }
+}
+?>
+
+<br>
+<br>
+<!-- Bài 7 -->
+<span style="color: red;">Bài 8</span>
+    <br>
+    <?php
+$array = ['programming', 'php', 'basic', 'dev', 'is', 'program is PHP'];
+
+$maxLength = 0;
+$minLength = PHP_INT_MAX;
+$longestString = '';
+$shortestString = '';
+
+foreach ($array as $string) {
+    $length = strlen($string);
+    if ($length > $maxLength) {
+        $maxLength = $length;
+        $longestString = $string;
+    }
+    if ($length < $minLength) {
+        $minLength = $length;
+        $shortestString = $string;
+    }
+}
+
+echo "Chuỗi lớn nhất là $longestString, độ dài = $maxLength<br>";
+echo "Chuỗi nhỏ nhất là $shortestString, độ dài = $minLength<br>";
 ?>
 
 
