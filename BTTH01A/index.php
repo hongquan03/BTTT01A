@@ -1,3 +1,4 @@
+<!-- Bài 1 -->
 <?php
 function tinhMang($arrs) {
     // Tính tổng
