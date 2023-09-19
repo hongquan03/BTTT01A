@@ -324,7 +324,89 @@ $array = array_values($array);
 print_r($array);
 ?>
 
+<!-- Bài 12 -->
+<br>
+<br>
+<span style="color: red;">Bài 12</span>
+    <br>
+    <?php
+$numbers = [
+    'key1' => 12,
+    'key2' => 30,
+    'key3' => 4,
+    'key4' => -123,
+    'key5' => 1234,
+    'key6' => -12565,
+];
 
+// Lấy ra phần tử đầu tiên và phần tử cuối cùng
+$firstElement = reset($numbers);
+$lastElement = end($numbers);
+
+echo 'Phần tử đầu tiên: ' . $firstElement . "<br>";
+echo 'Phần tử cuối cùng: ' . $lastElement . "<br>";
+
+// Tìm số lớn nhất, số nhỏ nhất và tổng các giá trị
+$maxValue = max($numbers);
+$minValue = min($numbers);
+$totalSum = array_sum($numbers);
+
+echo 'Số lớn nhất: ' . $maxValue . "<br>";
+echo 'Số nhỏ nhất: ' . $minValue . "<br>";
+echo 'Tổng các giá trị: ' . $totalSum . "<br>";
+
+// Sắp xếp mảng theo chiều tăng và giảm các giá trị
+sort($numbers);
+$ascendingNumbers = $numbers;
+
+rsort($numbers);
+$descendingNumbers = $numbers;
+
+echo 'Sắp xếp mảng theo chiều tăng: ' . implode(', ', $ascendingNumbers) . "<br>";
+echo 'Sắp xếp mảng theo chiều giảm: ' . implode(', ', $descendingNumbers) . "<br>";
+
+// Sắp xếp mảng theo chiều tăng và giảm các key
+ksort($numbers);
+$ascendingKeys = $numbers;
+
+krsort($numbers);
+$descendingKeys = $numbers;
+
+echo 'Sắp xếp mảng theo chiều tăng các key: ' . implode(', ', array_keys($ascendingKeys)) . "<br>";
+echo 'Sắp xếp mảng theo chiều giảm các key: ' . implode(', ', array_keys($descendingKeys)) . "<br>";
+?>
+
+<!-- Bài 13 -->
+<br>
+<br>
+<span style="color: red;">Bài 13</span>
+    <br>
+    <?php
+$numbers = [78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 75, 76, 73, 68, 62, 73, 72, 65, 74, 62, 62, 65, 64, 68, 73, 75, 79, 73];
+
+// Tính toán giá trị trung bình của mảng
+$average = array_sum($numbers) / count($numbers);
+
+echo 'Giá trị trung bình của mảng: ' . $average . "<br>";
+
+// Liệt kê các số lớn hơn giá trị trung bình
+echo 'Các số lớn hơn giá trị trung bình: ';
+foreach ($numbers as $number) {
+    if ($number > $average) {
+        echo $number . ' ';
+    }
+}
+echo "<br>";
+
+// Liệt kê các số nhỏ hơn hoặc bằng giá trị trung bình
+echo 'Các số nhỏ hơn hoặc bằng giá trị trung bình: ';
+foreach ($numbers as $number) {
+    if ($number <= $average) {
+        echo $number . ' ';
+    }
+}
+echo "<br>";
+?>
 
 
 </body>
