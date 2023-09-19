@@ -306,7 +306,23 @@ print_r(convertToUppercase($arr2));
 echo "Mảng 3 sau khi chuyển thành ký tự in hoa: ";
 print_r(convertToUppercase($arr3));
 ?>
+<!-- Bài 11 -->
+<br>
+<br>
+<span style="color: red;">Bài 11</span>
+    <br>
+    <?php
+$array = array(1, 2, 3, 4, 5);
 
+// Xóa phần tử thứ 3
+unset($array[2]);
+
+// Đặt lại key để đảm bảo key là tuần tự
+$array = array_values($array);
+
+// Hiển thị mảng sau khi xóa phần tử
+print_r($array);
+?>
 
 
 
