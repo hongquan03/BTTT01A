@@ -223,10 +223,10 @@ foreach ($array as $value) {
 
 <br>
 <br>
-<!-- Bài 7 -->
+<!-- Bài 8 -->
 <span style="color: red;">Bài 8</span>
     <br>
-    <?php
+<?php
 $array = ['programming', 'php', 'basic', 'dev', 'is', 'program is PHP'];
 
 $maxLength = 0;
@@ -248,6 +248,63 @@ foreach ($array as $string) {
 
 echo "Chuỗi lớn nhất là $longestString, độ dài = $maxLength<br>";
 echo "Chuỗi nhỏ nhất là $shortestString, độ dài = $minLength<br>";
+?>
+<br>
+<br>
+<!-- Bài 9 -->
+<span style="color: red;">Bài 9</span>
+    <br>
+    <?php
+function convertToLowercase($arr) {
+    foreach ($arr as &$element) {
+        if (is_string($element)) {
+            $element = strtolower($element);
+        }
+    }
+    return $arr;
+}
+
+$arr1 = ['a', 'b', 'ABC'];
+$arr2 = ['1', 'B', 'C', 'E'];
+$arr3 = ['a', 0, null, false];
+
+echo "Mảng 1 sau khi chuyển thành ký tự thường: ";
+print_r(convertToLowercase($arr1));
+
+echo "Mảng 2 sau khi chuyển thành ký tự thường: ";
+print_r(convertToLowercase($arr2));
+
+echo "Mảng 3 sau khi chuyển thành ký tự thường: ";
+print_r(convertToLowercase($arr3));
+?>
+
+<!-- Bài 10 -->
+<br>
+<br>
+<span style="color: red;">Bài 9</span>
+    <br>
+<?php
+function convertToUppercase($arr) {
+    foreach ($arr as &$element) {
+        if (is_string($element)) {
+            $element = strtoupper($element);
+        }
+    }
+    return $arr;
+}
+
+$arr1 = ['a', 'b', 'ABC'];
+$arr2 = ['1', 'b', 'c', 'd'];
+$arr3 = ['a', 0, null, false];
+
+echo "Mảng 1 sau khi chuyển thành ký tự in hoa: ";
+print_r(convertToUppercase($arr1));
+
+echo "Mảng 2 sau khi chuyển thành ký tự in hoa: ";
+print_r(convertToUppercase($arr2));
+
+echo "Mảng 3 sau khi chuyển thành ký tự in hoa: ";
+print_r(convertToUppercase($arr3));
 ?>
 
 
