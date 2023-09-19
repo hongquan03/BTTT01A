@@ -185,15 +185,15 @@ $values = array(
 $keysAndValues = array();
 
 foreach ($keys as $key => $value) {
-    $valuesKey = $value . 'value';
-    if (isset($values[$valuesKey])) {
-        $keysAndValues[$value] = $values[$valuesKey];
+    if (isset($values[$key . 'value'])) {
+        $keysAndValues[$value] = $values[$key . 'value'];
     }
 }
 
-// Hiển thị mảng kết quả
 print_r($keysAndValues);
 ?>
+
+
 
 
 
