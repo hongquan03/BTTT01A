@@ -1,4 +1,21 @@
-<!-- Bài 1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        table {
+            border-collapse: collapse;
+        }
+        table td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+<body>
+    <!-- Bài 1 -->
 <?php
 function tinhMang($arrs) {
     // Tính tổng
@@ -37,7 +54,8 @@ $arrs = [2, 5, 6, 9, 2, 5, 6, 12, 5];
 tinhMang($arrs);
 ?>
 
-
+<br>
+<br>
 <!-- Bài 2 -->
 <?php
 $arrs = ['đỏ', 'xanh', 'cam', 'trắng'];
@@ -62,16 +80,22 @@ for ($i = 0; $i < count($arrs); $i++) {
 echo $finalString;
 ?>
 
-
+<br>
+<br>
 <!-- Bài  3 -->
-<?php
-$arrs = ['PHP', 'HTML', 'CSS', 'JS'];
+<table>
+    <?php
+    $arrs = ['PHP', 'HTML', 'CSS', 'JS'];
+    echo '<tr>'.'Tên khóa học'.'</tr>';
+    for ($i = 0; $i < count($arrs); $i++) {
+        echo '<tr><td>' . $arrs[$i] . '</td></tr>';
+    }
+    ?>
+</table>
 
-foreach ($arrs as $item) {
-    echo $item . "<br>";
-}
-?>
 
+<br>
+<br>
 <!-- Bài 4 -->
 <?php
 $arrs = array(
@@ -107,3 +131,71 @@ foreach ($arrs as $country => $capital) {
 }
 ?>
 
+<br>
+<br>
+<!-- Bài 5 -->
+<br>
+<br>
+<?php
+$a = [
+    'a' => [
+        'b' => 0,
+        'c' => 1
+    ],
+    'b' => [
+        'e' => 2,
+        'o' => [
+            'b' => 3
+        ]
+    ]
+];
+
+// Lấy giá trị có key 'b'
+$valueB = $a['b']['o']['b'];
+
+// Lấy giá trị có key 'c'
+$valueC = $a['a']['c'];
+
+// Lấy thông tin của phần tử có key 'a'
+$elementA = $a['a'];
+
+// Hiển thị kết quả
+echo "Giá trị với key 'b' là: $valueB<br>";
+echo "Giá trị với key 'c' là: $valueC<br>";
+echo "Thông tin của phần tử với key 'a':<br>";
+print_r($elementA);
+?>
+
+<br>
+<br>
+<!-- Bài 6 -->
+<?php
+$keys = array(
+    "field1" => "first",
+    "field2" => "second",
+    "field3" => "third"
+);
+
+$values = array(
+    "field1value" => "dinosaur",
+    "field2value" => "pig",
+    "field3value" => "platypus"
+);
+
+$keysAndValues = array();
+
+foreach ($keys as $key => $value) {
+    $valuesKey = $value . 'value';
+    if (isset($values[$valuesKey])) {
+        $keysAndValues[$value] = $values[$valuesKey];
+    }
+}
+
+// Hiển thị mảng kết quả
+print_r($keysAndValues);
+?>
+
+
+
+</body>
+</html>
